@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>RaddiBook — scrap buying, stock &amp; resale margin for kabadiwala</title>
+  <meta name="description" content="Buy scrap by weight × rate, print a cash payout slip, track stock by category, and see the resale margin when you sell to a big dealer. A book for kabadiwala and scrap dealers — book a discovery call." />
+  <meta name="keywords" content="kabadiwala app, scrap dealer software, raddi management, scrap buying book, weight rate payout slip, scrap stock by category, resale margin, kabadi khata India" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+  <link rel="canonical" href="https://sreenivas-sadhu-prabhakara.github.io/raddibook-site/" />
+  <meta name="theme-color" content="#b45309" />
+  <meta name="author" content="KARYA" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="KARYA" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:title" content="RaddiBook — scrap buying, stock &amp; resale margin for kabadiwala" />
+  <meta property="og:description" content="Buy scrap by weight × rate, print a cash payout slip, track stock by category, and see the resale margin when you sell to a big dealer. A book for kabadiwala and scrap dealers." />
+  <meta property="og:url" content="https://sreenivas-sadhu-prabhakara.github.io/raddibook-site/" />
+  <meta property="og:image" content="https://sreenivas-sadhu-prabhakara.github.io/raddibook-site/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="RaddiBook — buy scrap by weight, cash payout slip, stock by category and resale margin for kabadiwala and scrap dealers." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RaddiBook — scrap buying, stock &amp; resale margin for kabadiwala" />
+  <meta name="twitter:description" content="Buy scrap by weight × rate, print a cash payout slip, track stock by category, and see the resale margin when you sell to a big dealer. A book for kabadiwala and scrap dealers." />
+  <meta name="twitter:image" content="https://sreenivas-sadhu-prabhakara.github.io/raddibook-site/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="https://sreenivas-sadhu-prabhakara.github.io/raddibook-site/og.png" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://kaarya-bench.pages.dev/#org",
+        "name": "KARYA",
+        "url": "https://kaarya-bench.pages.dev/",
+        "email": "sreeni.nintendo@gmail.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sreenivas-sadhu-prabhakara.github.io/raddibook-site/#website",
+        "url": "https://sreenivas-sadhu-prabhakara.github.io/raddibook-site/",
+        "name": "RaddiBook",
+        "inLanguage": "en-IN",
+        "publisher": { "@id": "https://kaarya-bench.pages.dev/#org" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "RaddiBook",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://sreenivas-sadhu-prabhakara.github.io/raddibook-site/",
+        "image": "https://sreenivas-sadhu-prabhakara.github.io/raddibook-site/og.png",
+        "description": "A scrap-buying book for the kabadiwala — record a purchase by weight × rate, print a cash payout slip, accrue stock by category (paper, plastic, iron, cardboard, glass, e-waste), and see the resale margin when you sell to a big dealer. Stock on hand is always purchased minus sold.",
+        "inLanguage": ["en-IN", "hi-IN"],
+        "areaServed": { "@type": "Country", "name": "India" },
+        "audience": { "@type": "BusinessAudience" },
+        "provider": { "@type": "Organization", "name": "KARYA" },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "description": "Subscription — pricing shared on a discovery call"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the payout slip work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You weigh each category, punch the rate per kg, and RaddiBook totals the exact cash to pay. It prints a numbered cash payout slip for the supplier and queues a 'paid in full' WhatsApp receipt to their number. No mental maths, no drift on the weight × rate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does it know my stock and resale margin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Stock is not a number you maintain — it is purchased minus sold, per category. Every buy adds to the godown, valued at your weighted-average buy rate. When you sell to a big dealer, RaddiBook prices the cost at that average and books the margin — green if you beat cost, red if the dealer under-paid."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which scrap categories are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Six by default — paper, cardboard, plastic, iron, glass and e-waste. A purchase can mix any of them as separate weighed line items, each with its own rate, and stock is tracked separately per category."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work offline, and do I need to type in a lot to start?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes to offline — RaddiBook runs fully local with no API keys. And the demo IS the pitch: on first open it seeds a real kabadiwala's week of purchases and sales, so the dashboard, stock board and margins are alive before you enter anything of your own."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does it cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pricing is worked out on a quick discovery call and billed monthly on subscription. We're keeping public prices off the page while we onboard our first users."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "KARYA · On the Bench",
+            "item": "https://kaarya-bench.pages.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "RaddiBook",
+            "item": "https://sreenivas-sadhu-prabhakara.github.io/raddibook-site/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="RaddiBook home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" role="img" aria-label="RaddiBook logo">
+            <rect x="3" y="4" width="26" height="24" rx="3" fill="#b45309"/>
+            <rect x="3" y="4" width="7" height="24" rx="3" fill="#8a3f06"/>
+            <path d="M14 10h11M14 16h11M14 22h7" stroke="#F7F1E8" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">Raddi<span class="brand__book">Book</span></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#problem">The problem</a>
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#preview">Preview</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <a href="mailto:sreeni.nintendo@gmail.com?subject=Discovery%20call%20—%20RaddiBook" class="btn btn--sm">Book a discovery call</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">The kabadiwala's book</p>
+          <h1 class="hero__title" id="hero-title">Weigh it. Pay it.<br /><span class="accent-word">Know your margin.</span></h1>
+          <p class="hero__pain">
+            Buying scrap is easy — weight times rate, cash in hand. The money you
+            can't see is in the godown: how many kilos of each thing you're holding,
+            and whether the big dealer's truck actually paid you above cost. RaddiBook
+            keeps that book for you.
+          </p>
+          <div class="hero__cta">
+            <a href="#how" class="btn btn--lg">See the buy &rarr; sell cycle &rarr;</a>
+            <a href="#preview" class="btn-link">See the dashboard</a>
+          </div>
+          <p class="hero__note"><span class="dot"></span>For kabadiwala &amp; small scrap dealers · runs offline · subscription · pricing on discovery</p>
+        </div>
+
+        <!-- SIGNATURE WIDGET: live weigh-slip -->
+        <aside class="register" aria-label="Live purchase weigh-slip demo">
+          <div class="register__head">
+            <div>
+              <p class="register__label">New purchase · payout slip</p>
+              <p class="register__month" id="reg-supplier">Sunita Behen · Kothrud</p>
+            </div>
+            <span class="register__pill">Weighing</span>
+          </div>
+          <ul class="register__rows" id="reg-rows">
+            <li class="reg-row">
+              <span class="reg-row__name">Paper <em>· newspaper &amp; books</em></span>
+              <span class="reg-row__wt">14.0 kg × ₹14</span>
+              <span class="reg-row__amt">₹196</span>
+            </li>
+            <li class="reg-row">
+              <span class="reg-row__name">Iron <em>· old grill, utensils</em></span>
+              <span class="reg-row__wt">8.5 kg × ₹32</span>
+              <span class="reg-row__amt">₹272</span>
+            </li>
+            <li class="reg-row" id="reg-live-row">
+              <span class="reg-row__name">Plastic <em>· bottles &amp; cans</em></span>
+              <span class="reg-row__wt" id="reg-live-wt">6.0 kg × ₹11</span>
+              <span class="reg-row__amt" id="reg-live-amt">₹66</span>
+            </li>
+          </ul>
+          <div class="register__foot">
+            <div class="regstat">
+              <span class="regstat__label">Cash to pay</span>
+              <span class="regstat__val regstat__val--in" id="reg-total">₹534</span>
+            </div>
+            <div class="regstat">
+              <span class="regstat__label">Total weight</span>
+              <span class="regstat__val regstat__val--out" id="reg-weight">28.5 kg</span>
+            </div>
+          </div>
+          <p class="register__caption" id="reg-caption">Add the plastic → slip totals to ₹534. Payout PAY-20260719-0043 ready.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM ============ -->
+    <section class="section" id="problem" aria-label="The problem">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">01 · The problem</p>
+        <div class="two-col">
+          <h2 class="section__title">You know today's cash.<br />Nobody writes down the margin.</h2>
+          <div class="prose">
+            <p>
+              A kabadiwala's buying is fast and honest — <strong>weight times rate, paid
+              in cash</strong>. But the day never gets written down. Bags pile in the
+              godown, the dealer's truck comes and goes, and the one figure that decides
+              whether you made money — cost versus resale — lives nowhere.
+            </p>
+          </div>
+        </div>
+
+        <div class="pain-grid">
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">⚖️</span>
+            <h3>The payout is maths in your head</h3>
+            <p>Paper at one rate, iron at another, plastic at a third — you add it up on the spot, hand over cash, and there's no slip to show for it later.</p>
+          </div>
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">📦</span>
+            <h3>The godown is a guess</h3>
+            <p>How many kilos of cardboard are stacked back there? How much iron? You find out when the truck weighs it — not before you agree a price.</p>
+          </div>
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">📉</span>
+            <h3>Margin is invisible</h3>
+            <p>You bought paper at ₹14 all week; the dealer paid ₹13 today. Did you lose on that lot? Without the buy rate written down, you'll never know.</p>
+          </div>
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">🧾</span>
+            <h3>No proof for the household</h3>
+            <p>People want a receipt for the raddi they sold you. You promise one later — and later is a scrap of paper that gets lost.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSIGHT ============ -->
+    <section class="insight" id="insight" aria-label="The insight">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--light">02 · The insight</p>
+        <blockquote class="insight__quote">
+          Buying scrap is a <span class="hl">solved</span> sum. The leak is in the
+          <span class="hl">middle</span> — the stock sitting in the godown and the
+          margin between what you paid and what the dealer paid you.
+        </blockquote>
+        <p class="insight__punch">
+          RaddiBook's whole job is to close that gap. Every purchase becomes a
+          <strong>payout slip</strong> and adds to <strong>stock by category</strong>;
+          every sale to a big dealer is priced against your <strong>average buy rate</strong>
+          so the <strong>margin</strong> is booked the moment the truck leaves — not guessed at year-end.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" id="how" aria-label="How it works">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">03 · How it works</p>
+        <h2 class="section__title">Four taps a buy. Stock and margin keep themselves.</h2>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__n">1</span>
+            <div>
+              <h3>Record a purchase, weighed by category</h3>
+              <p>Pick the supplier, weigh each category — paper, plastic, iron, cardboard, glass, e-waste — punch the rate per kg. RaddiBook totals the exact cash to pay.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">2</span>
+            <div>
+              <h3>Print the cash payout slip</h3>
+              <p>A numbered slip (PAY-YYYYMMDD-NNNN) for the supplier, and a "paid in full" WhatsApp receipt queued to their number. Proof, handled on the spot.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">3</span>
+            <div>
+              <h3>Stock accrues by category, on its own</h3>
+              <p>Every buy adds to the godown. On-hand per category is always purchased minus sold, valued at your weighted-average buy rate. No stocktake needed.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">4</span>
+            <div>
+              <h3>Sell to a big dealer → margin is booked</h3>
+              <p>Record the sale at the dealer's rate. RaddiBook prices the cost at your average buy rate and books the resale margin — green if you beat cost, red if not.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section section--tint" id="features" aria-label="What's inside">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">04 · What's inside</p>
+        <h2 class="section__title">The whole buy → stock → sell cycle, in one book.</h2>
+
+        <div class="feat-grid">
+          <article class="feat">
+            <h3>Weight × rate purchases</h3>
+            <p>Line items by category, each weighed with its own rate per kg. The payout total is exact — no float drift, money kept in whole rupees.</p>
+          </article>
+          <article class="feat">
+            <h3>Numbered cash payout slips</h3>
+            <p>Every purchase prints a PAY-YYYYMMDD-NNNN slip and queues a WhatsApp receipt, so the household walks away with proof of what they were paid.</p>
+          </article>
+          <article class="feat">
+            <h3>Stock by category, derived</h3>
+            <p>On-hand kilos and value per category — paper, plastic, iron, cardboard, glass, e-waste. It's a query (purchased minus sold), never a number to maintain.</p>
+          </article>
+          <article class="feat">
+            <h3>Weighted-average buy rate</h3>
+            <p>Buy the same paper at different rates all week; RaddiBook holds a blended cost per kg, so your stock is valued at what it actually cost you.</p>
+          </article>
+          <article class="feat">
+            <h3>Resale margin on every sale</h3>
+            <p>Sell to the big dealer and see the margin against cost — beat it and it's green, under-paid and it's red. The number nobody else writes down.</p>
+          </article>
+          <article class="feat">
+            <h3>Dashboard for today &amp; this month</h3>
+            <p>Today's purchases and cash paid out, stock by category, and this month's sales and margin — the whole shop in ten seconds, and it runs offline.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT PREVIEW ============ -->
+    <section class="section" id="preview" aria-label="The dashboard">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">05 · The dashboard</p>
+        <h2 class="section__title">Open it in the morning. See the godown and the margin.</h2>
+
+        <div class="screen" role="img" aria-label="RaddiBook dashboard preview showing 1,240 rupees paid out today, 61,800 rupees of stock on hand, and a stock-by-category table with resale margins for the month.">
+          <!-- browser chrome -->
+          <div class="screen__bar">
+            <span class="screen__dot"></span><span class="screen__dot"></span><span class="screen__dot"></span>
+            <span class="screen__url">localhost:8137 / RaddiBook</span>
+          </div>
+
+          <div class="screen__body">
+            <div class="screen__topline">
+              <div>
+                <p class="screen__hello">Namaste, Imran bhai</p>
+                <p class="screen__sub">Kondhwa scrap · week of 19 Jul 2026</p>
+              </div>
+              <span class="screen__tag">Stock valued · avg buy rate</span>
+            </div>
+
+            <!-- KPI cards -->
+            <div class="kpis">
+              <div class="kpi kpi--in">
+                <p class="kpi__label">Paid out today</p>
+                <p class="kpi__val">₹1,240</p>
+                <div class="kpi__bar"><span style="width:55%"></span></div>
+                <p class="kpi__meta">3 purchases · 6 categories</p>
+              </div>
+              <div class="kpi kpi--out">
+                <p class="kpi__label">Margin this month</p>
+                <p class="kpi__val">₹8,650</p>
+                <div class="kpi__bar kpi__bar--out"><span style="width:72%"></span></div>
+                <p class="kpi__meta">across 4 dealer sales</p>
+              </div>
+              <div class="kpi kpi--flat">
+                <p class="kpi__label">Stock on hand</p>
+                <p class="kpi__val">₹61,800</p>
+                <p class="kpi__meta">427 kg across 6 categories</p>
+              </div>
+            </div>
+
+            <!-- stock + margin table -->
+            <div class="tablecard">
+              <div class="tablecard__head">
+                <p>Stock by category · resale so far</p>
+                <span class="tablecard__hint">avg buy vs dealer rate</span>
+              </div>
+              <div class="tablescroll">
+                <table class="dtable">
+                  <thead>
+                    <tr>
+                      <th>Category</th><th class="num">On hand</th><th class="num">Avg buy</th><th class="num">Value</th><th>Last sale margin</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Paper</td><td class="num">142 kg</td>
+                      <td class="num">₹14</td><td class="num">₹1,988</td>
+                      <td><span class="s s--gain">+₹1.5/kg · sold ₹15.5</span></td>
+                    </tr>
+                    <tr>
+                      <td>Iron</td><td class="num">96 kg</td>
+                      <td class="num">₹31</td><td class="num">₹2,976</td>
+                      <td><span class="s s--gain">+₹4/kg · sold ₹35</span></td>
+                    </tr>
+                    <tr>
+                      <td>Cardboard</td><td class="num">88 kg</td>
+                      <td class="num">₹9</td><td class="num">₹792</td>
+                      <td><span class="s s--hold">held · no sale yet</span></td>
+                    </tr>
+                    <tr>
+                      <td>Plastic</td><td class="num">64 kg</td>
+                      <td class="num">₹11</td><td class="num">₹704</td>
+                      <td><span class="s s--loss">−₹1/kg · sold ₹10</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section section--tint" id="pricing" aria-label="Pricing">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">06 · Pricing</p>
+        <div class="price-wrap">
+          <div class="price-copy">
+            <h2 class="section__title">Simple subscription. However much scrap you turn.</h2>
+            <p class="prose">
+              If RaddiBook catches <strong>one lot the dealer under-paid on</strong>,
+              or one payout you'd have gotten wrong in your head, it's already earned
+              its keep — and you finally have a book that tells you if the week made money.
+            </p>
+            <ul class="price-includes">
+              <li>Unlimited purchases, suppliers &amp; sales</li>
+              <li>Cash payout slips + WhatsApp receipts</li>
+              <li>Stock by category at weighted-average cost</li>
+              <li>Resale margin on every dealer sale &amp; a live dashboard</li>
+            </ul>
+          </div>
+
+          <div class="price-card">
+            <p class="price-card__eyebrow">RaddiBook</p>
+            <p class="price-card__amt" style="font-size:34px;">Pricing — on discovery</p>
+            <p class="price-card__line">Subscription basis</p>
+            <p class="prose" style="color:color-mix(in srgb, var(--paper) 82%, transparent);margin:0 0 22px;">
+              We set pricing on a short discovery call and bill it as a simple monthly
+              subscription — sized to how much scrap you turn. Early users get founder terms.
+            </p>
+            <a href="mailto:sreeni.nintendo@gmail.com?subject=Discovery%20call%20—%20RaddiBook" class="btn btn--lg btn--block">Book a discovery call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHO + FAQ ============ -->
+    <section class="section" id="faq" aria-label="Who it's for and frequently asked questions">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">07 · Who it's for &amp; questions</p>
+        <div class="who-grid">
+          <div class="who">
+            <h2 class="section__title section__title--sm">Built for the kabadiwala, not the recycling plant.</h2>
+            <p class="prose">
+              RaddiBook is for the person who <strong>buys raddi from households and
+              sells it on to a big dealer</strong> — a shop, a cart, a small godown.
+              Big enough that the margin matters; small enough that ERP software is
+              overkill and priced for someone else. If you run it on cash and memory
+              today, this is your book.
+            </p>
+            <div class="who-tags">
+              <span>Kabadiwala</span>
+              <span>Small scrap dealers</span>
+              <span>Godown &amp; cart buyers</span>
+              <span>Raddi &amp; recyclables</span>
+            </div>
+          </div>
+
+          <div class="faq">
+            <details open>
+              <summary>How does the payout slip work?</summary>
+              <p>You weigh each category, punch the rate per kg, and RaddiBook totals the exact cash to pay. It prints a numbered cash payout slip for the supplier and queues a "paid in full" WhatsApp receipt to their number. No mental maths, no drift on the weight × rate.</p>
+            </details>
+            <details>
+              <summary>How does it know my stock and resale margin?</summary>
+              <p>Stock isn't a number you maintain — it's purchased minus sold, per category. Every buy adds to the godown, valued at your weighted-average buy rate. When you sell to a big dealer, RaddiBook prices the cost at that average and books the margin — green if you beat cost, red if the dealer under-paid.</p>
+            </details>
+            <details>
+              <summary>Which scrap categories are supported?</summary>
+              <p>Six by default — paper, cardboard, plastic, iron, glass and e-waste. A purchase can mix any of them as separate weighed line items, each with its own rate, and stock is tracked separately per category.</p>
+            </details>
+            <details>
+              <summary>Does it work offline, and is there a lot to set up?</summary>
+              <p>Yes to offline — RaddiBook runs fully local with no API keys. And the demo is the pitch: on first open it seeds a real kabadiwala's week of purchases and sales, so the dashboard, stock board and margins are alive before you enter anything of your own.</p>
+            </details>
+            <details>
+              <summary>What does it cost?</summary>
+              <p>Pricing is worked out on a quick discovery call and billed monthly on subscription. We're keeping public prices off the page while we onboard our first users.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <span class="brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="24" height="24" role="img" aria-label="RaddiBook logo">
+              <rect x="3" y="4" width="26" height="24" rx="3" fill="#b45309"/>
+              <rect x="3" y="4" width="7" height="24" rx="3" fill="#8a3f06"/>
+              <path d="M14 10h11M14 16h11M14 22h7" stroke="#F7F1E8" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand__name">Raddi<span class="brand__book">Book</span></span>
+        </span>
+        <p class="footer__tag">Weigh it. Pay it. Know your margin.</p>
+      </div>
+      <div class="footer__meta">
+        <p class="footer__studio">A <strong>KARYA</strong> studio build</p>
+        <a class="footer__mail" href="mailto:sreeni.nintendo@gmail.com">sreeni.nintendo@gmail.com</a>
+        <p class="footer__fine">© 2026 RaddiBook · Made in India</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
